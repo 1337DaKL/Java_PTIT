@@ -12,25 +12,25 @@ import java.util.*;
 import java.io.*;
 class MonHoc{
     private String maMonHocString;
-    private String tenMonHocString;
-    private long soTinChi;
-    protected MonHoc(String ma , String ten , long tin)
+    private String tenMonString;
+    private String hinhThucThiString;
+    protected MonHoc(String ma , String mon , String hinhThuc)
     {
         this.maMonHocString = ma;
-        this.tenMonHocString = ten;
-        this.soTinChi = tin;
+        this.tenMonString = mon;
+        this.hinhThucThiString = hinhThuc;
     }
-    protected String getNam()
+    protected String getMaMonHoc()
     {
-        return this.tenMonHocString;
+        return this.maMonHocString;
     }
     @Override
     public String toString() {
-        return this.maMonHocString + " " + this.tenMonHocString + " " + this.soTinChi;
+        return this.maMonHocString + " " +this.tenMonString + " " + this.hinhThucThiString;
     }
     
 }
-public class J07034 {
+public class J07058 {
     public static void main(String[] args) throws FileNotFoundException{
         File file = new File("MONHOC.in");
         Scanner sc = new Scanner(file);
@@ -39,12 +39,8 @@ public class J07034 {
         TreeMap<String , MonHoc> map = new TreeMap<>();
         while(test-- > 0)
         {
-            String ma = sc.nextLine();
-            String mon = sc.nextLine();
-            long tin = sc.nextLong();
-            sc.nextLine();
-            MonHoc a = new MonHoc(ma, mon, tin);
-            map.put(a.getNam(), a);
+            MonHoc a = new MonHoc(sc.nextLine(), sc.nextLine(), sc.nextLine());
+            map.put(a.getMaMonHoc(), a);
         }
         Set<Map.Entry<String , MonHoc>> entrys = map.entrySet();
         for(Map.Entry<String , MonHoc> x : entrys)
