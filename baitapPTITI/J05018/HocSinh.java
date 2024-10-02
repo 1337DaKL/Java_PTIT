@@ -17,7 +17,7 @@ public class HocSinh {
     {
         this.maHocSinhString = "HS" + String.format("%02d" , i);
         this.tenHocSinhString = ten;
-        this.diemTrungBinh = Math.round((diem1 * 2 + diem2 * 2 + diem3 + diem4 + diem5 + diem6 + diem7 + diem8 + diem9 + diem10) / 12f * 10f) / 10f;
+        this.diemTrungBinh =Math.round((diem1 * 2 + diem2 * 2 + diem3 + diem4 + diem5 + diem6 + diem7 + diem8 + diem9 + diem10) / 12f *10.0) / 10.0;
         if(this.diemTrungBinh < 5)
         {
             this.xepLoaiString = "YEU";
@@ -36,7 +36,7 @@ public class HocSinh {
         }
         else 
         {
-            this.xepLoaiString = "XUAT XAC";
+            this.xepLoaiString = "XUAT SAC";
         }
     }
 
